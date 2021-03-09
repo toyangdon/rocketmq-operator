@@ -9,7 +9,7 @@ services:
   - docker
 before_install:
   - curl -LO https://github.com/operator-framework/operator-sdk/releases/latest/download/operator-sdk_linux_arm64
-  - chmod +x operator-sdk_linux_arm64 && mv operator-sdk_linux_arm64 /usr/local/bin/operator-sdk
+  - chmod +x operator-sdk_linux_arm64 &&sudo  mv operator-sdk_linux_arm64 /usr/local/bin/operator-sdk
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
 script:
   - ./create-operator.sh
