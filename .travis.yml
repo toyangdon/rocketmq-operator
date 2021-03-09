@@ -1,6 +1,6 @@
 language: go
 go:
-- "1.12"
+- "1.13"
 arch:
   - arm64
 os:
@@ -12,6 +12,7 @@ before_install:
   - chmod +x operator-sdk_linux_arm64 &&sudo  mv operator-sdk_linux_arm64 /usr/local/bin/operator-sdk
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
   - export GO111MODULE=on
+  - export GOPROXY="https://proxy.golang.org,direct"
 script:
   - ./create-operator.sh
   - cd images/broker/alpine/ && build-broker-image.sh 4.5.0
