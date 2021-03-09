@@ -35,7 +35,6 @@ RUN set -eux; \
     curl https://archive.apache.org/dist/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip; \
     curl https://archive.apache.org/dist/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip.asc -o rocketmq.zip.asc; \
 	curl https://www.apache.org/dist/rocketmq/KEYS -o KEYS; \
-	gpg --import KEYS; \
     unzip rocketmq.zip; \
 	mv rocketmq-all*/* . ; \
 	rmdir rocketmq-all* ; \
