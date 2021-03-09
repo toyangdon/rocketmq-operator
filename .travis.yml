@@ -17,5 +17,5 @@ install: skip
 script:
   - ./create-operator.sh
   - export pwd=$PWD && echo $PWD
-  - cd images/broker/alpine/ && build-broker-image.sh 4.5.0
-  - cd images/namesrv/alpine/ && build-namesrv-image.sh 4.5.0
+  - cd ${pwd}/images/broker/alpine/ && build-broker-image.sh 4.5.0
+  - cd ${pwd}/images/namesrv/alpine/ && build-namesrv-image.sh 4.5.0
