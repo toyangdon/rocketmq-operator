@@ -5,7 +5,7 @@ os:
 services:
   - docker
 before_install:
-  - docker build -t toyangdon/dockerize:latest .
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
 script:
-  - docker push toyangdon/dockerize:latest
+  - cd images/broker/alpine/ && build-broker-image.sh 4.5.0
+  - cd images/namesrv/alpine/ && build-namesrv-image.sh 4.5.0
