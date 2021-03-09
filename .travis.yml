@@ -1,3 +1,6 @@
+language: go
+go:
+- "1.12"
 arch:
   - arm64
 os:
@@ -5,7 +8,10 @@ os:
 services:
   - docker
 before_install:
+  - curl -LO https://github.com/operator-framework/operator-sdk/releases/latest/download/operator-sdk_linux_arm64
+  - chmod +x operator-sdk_linux_arm64 && mv operator-sdk_linux_arm64 /usr/local/bin/operator-sdk
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
 script:
+  - ./create-operator.sh
   - cd images/broker/alpine/ && build-broker-image.sh 4.5.0
   - cd images/namesrv/alpine/ && build-namesrv-image.sh 4.5.0
