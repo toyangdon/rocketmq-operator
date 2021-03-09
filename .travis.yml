@@ -9,7 +9,7 @@ services:
   - docker
 before_install:
   - curl -LO https://github.com/operator-framework/operator-sdk/releases/download/v0.18.1/operator-sdk-v0.18.1-aarch64-linux-gnu
-  - chmod +x operator-sdk_linux_arm64 &&sudo  mv operator-sdk-v0.18.1-aarch64-linux-gnu /usr/local/bin/operator-sdk
+  - chmod +x operator-sdk-v0.18.1-aarch64-linux-gnu &&sudo  mv operator-sdk-v0.18.1-aarch64-linux-gnu /usr/local/bin/operator-sdk
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
   - export GO111MODULE=on
   - export GOPROXY="https://proxy.golang.org,direct"
