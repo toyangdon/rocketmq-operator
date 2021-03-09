@@ -8,7 +8,7 @@ os:
 services:
   - docker
 before_install:
-  - curl -LO https://github.com/operator-framework/operator-sdk/releases/latest/download/operator-sdk_linux_arm64
+  - curl -LO https://github.com/operator-framework/operator-sdk/releases/v0.11.0/download/operator-sdk_linux_arm64
   - chmod +x operator-sdk_linux_arm64 &&sudo  mv operator-sdk_linux_arm64 /usr/local/bin/operator-sdk
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
   - export GO111MODULE=on
