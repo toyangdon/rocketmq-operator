@@ -1,4 +1,4 @@
-language: generic
+language: go
 go:
 - "1.13"
 arch:
@@ -13,6 +13,7 @@ before_install:
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
   - export GO111MODULE=on
   - export GOPROXY="https://proxy.golang.org,direct"
+install: skip
 script:
   - ./create-operator.sh
   - cd images/broker/alpine/ && build-broker-image.sh 4.5.0
