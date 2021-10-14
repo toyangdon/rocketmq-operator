@@ -15,7 +15,7 @@ before_install:
   - export GOPROXY="https://proxy.golang.org,direct"
 install: skip
 script:
-  - ./create-operator.sh
-  - export pwd=$PWD && echo $PWD
+  - ./create-operator.sh 
+  - export  pwd=$PWD && echo $PWD
   - cd ${pwd}/images/broker/alpine/ && ./build-broker-image.sh 4.8.0
   - cd ${pwd}/images/namesrv/alpine/ && ./build-namesrv-image.sh 4.8.0
