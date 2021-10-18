@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM openjdk:8-alpine
+FROM toyangdon/oracle_jdk:1.8
 
 RUN apk add --no-cache bash gettext nmap-ncat openssl busybox-extras
 
